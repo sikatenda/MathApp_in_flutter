@@ -7,6 +7,15 @@ void main() {
 class MyWidget extends StatelessWidget {
   const MyWidget({super.key});
 
+  //int? number;
+
+  void increase() {
+    int? num1;
+    num1 = (num1! + 1);
+  }
+
+  //Addition a = Addition();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,24 +27,40 @@ class MyWidget extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 77, 225, 84),
         ),
         body: SafeArea(
-          child: Container(
-            padding: const EdgeInsets.all(12),
-            margin: EdgeInsets.all(18),
-            color: Colors.brown,
-            width: 250,
-            height: 500,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-                  child: Text("Hello there !"),
-                ),
-                Text("Jacques Feruzi"),
-              ],
+          child: Center(
+            child: Container(
+              padding: const EdgeInsets.all(12),
+              margin: EdgeInsets.all(8),
+              color: Colors.brown,
+              width: double.infinity,
+              height: double.infinity,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                    child: const Text("You are year(s) old !"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                    child: Text("Jacques Feruzi"),
+                  ),
+                  FilledButton(onPressed: () {}, child: const Text("Process")),
+                ],
+              ),
             ),
           ),
         ),
       ),
     );
+  }
+}
+
+class Addition {
+  //properties
+  int? number;
+
+  //Method
+  void add(number) {
+    number++;
   }
 }
