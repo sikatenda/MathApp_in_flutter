@@ -9,16 +9,19 @@ class MyWidget extends StatelessWidget {
 
   //int? number;
 
-  void increase() {
-    int? num1;
-    num1 = (num1! + 1);
-  }
+  //Addition a = Addition();
+
+  //void increase() {
+  // int? num1;
+  // int? number = (num1! + 1);
+  //}
 
   //Addition a = Addition();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Center(
@@ -38,7 +41,7 @@ class MyWidget extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-                    child: const Text("You are year(s) old !"),
+                    child: const Text("You are  year(s) old !"),
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
@@ -59,8 +62,13 @@ class Addition {
   //properties
   int? number;
 
+  //constructor
+  Addition() {
+    this.number = number;
+  }
+
   //Method
-  void add(number) {
-    number++;
+  void add() {
+    number = number! + 1;
   }
 }
