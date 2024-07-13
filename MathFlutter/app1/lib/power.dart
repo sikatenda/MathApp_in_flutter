@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:app1/main.dart';
 import 'package:flutter/services.dart';
@@ -13,9 +15,9 @@ class _MySquareState extends State<MyPower> {
   final textController1 = TextEditingController();
   final textController2 = TextEditingController();
 
-  double exponent = 0.0;
-  double base = 0.0;
-  double result = 0.0;
+  double _exponent = 0.0;
+  double _base = 0.0;
+  double _result = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class _MySquareState extends State<MyPower> {
           child: Center(
             child: Container(
               padding: const EdgeInsets.all(12),
-              margin: const EdgeInsets.all(6),
+              margin: const EdgeInsets.all(2),
               color: Colors.brown,
               width: double.infinity,
               height: double.infinity,
@@ -45,7 +47,7 @@ class _MySquareState extends State<MyPower> {
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(10, 20, 0, 40),
-                    child: Text("$result",
+                    child: Text("$_result",
                         style:
                             const TextStyle(color: Colors.black, fontSize: 35)),
                   ),
@@ -62,13 +64,14 @@ class _MySquareState extends State<MyPower> {
                               inputFormatters: [
                                 FilteringTextInputFormatter.digitsOnly
                               ],
-                              style: const TextStyle(fontSize: 21),
+                              style: const TextStyle(fontSize: 16),
                               decoration: const InputDecoration(
                                 filled: true,
-                                hintText: "00",
+                                hintText: "b...",
                                 border: OutlineInputBorder(),
                               )),
                         ),
+                        const Text("   "),
                         SizedBox(
                           height: 40.0,
                           width: 60.0,
@@ -78,28 +81,26 @@ class _MySquareState extends State<MyPower> {
                               inputFormatters: [
                                 FilteringTextInputFormatter.digitsOnly
                               ],
-                              style: const TextStyle(fontSize: 21),
+                              style: const TextStyle(fontSize: 16),
                               decoration: const InputDecoration(
                                 filled: true,
-                                hintText: "0.0",
+                                hintText: "e...",
                                 border: OutlineInputBorder(),
                               )),
                         ),
-                        TextButton(
-                          style: TextButton.styleFrom(
-                              padding: const EdgeInsets.fromLTRB(50, 0, 0, 0)),
-                          onPressed: () {
-                            setState(() {
-                              textController1.clear();
-                              textController2.clear();
-                              result = 0.0;
-                            });
-                          },
-                          child: const Text(
-                            'Clear',
-                            style: TextStyle(color: Colors.black, fontSize: 16),
-                          ),
-                        )
+                        IconButton(
+                            style: IconButton.styleFrom(
+                                foregroundColor: Colors.black,
+                                padding:
+                                    const EdgeInsets.fromLTRB(80, 0, 0, 0)),
+                            onPressed: () {
+                              setState(() {
+                                textController1.clear();
+                                textController2.clear();
+                                _result = 0;
+                              });
+                            },
+                            icon: const Icon(Icons.delete)),
                       ],
                     ),
                   ),
@@ -111,7 +112,13 @@ class _MySquareState extends State<MyPower> {
                           fixedSize: const Size.fromWidth(250),
                           foregroundColor: Colors.white,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            _base = double.parse(textController1.text);
+                            _exponent = double.parse(textController2.text);
+                            _result = pow(_base, _exponent).toDouble();
+                          });
+                        },
                         child: const Text("Process"));
                   }),
                   Padding(

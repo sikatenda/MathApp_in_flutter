@@ -32,7 +32,7 @@ class _MySquareState extends State<MySquare> {
           child: Center(
             child: Container(
               padding: const EdgeInsets.all(12),
-              margin: const EdgeInsets.all(6),
+              margin: const EdgeInsets.all(2),
               color: Colors.brown,
               width: double.infinity,
               height: double.infinity,
@@ -40,21 +40,23 @@ class _MySquareState extends State<MySquare> {
                 children: [
                   const Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                    child: Text("Calculate a square root  !",
-                        style: TextStyle(color: Colors.black, fontSize: 18)),
+                    child: Text("Get a square root !",
+                        style: TextStyle(color: Colors.black, fontSize: 16)),
+                  ),
+                  SizedBox(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 40, 0, 40),
+                      child: Text("$result",
+                          style: const TextStyle(
+                              color: Colors.black, fontSize: 35)),
+                    ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 40, 0, 40),
-                    child: Text("$result",
-                        style:
-                            const TextStyle(color: Colors.black, fontSize: 21)),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
+                    padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
                     child: Row(
                       children: [
                         SizedBox(
-                          height: 60.0,
+                          height: 40.0,
                           width: 60.0,
                           child: TextField(
                               controller: textController1,
@@ -62,27 +64,25 @@ class _MySquareState extends State<MySquare> {
                               inputFormatters: [
                                 FilteringTextInputFormatter.digitsOnly
                               ],
-                              style: const TextStyle(fontSize: 21),
+                              style: const TextStyle(fontSize: 16),
                               decoration: const InputDecoration(
                                 filled: true,
-                                hintText: "00",
+                                hintText: "00.0",
                                 border: OutlineInputBorder(),
                               )),
                         ),
-                        TextButton(
-                          style: TextButton.styleFrom(
-                              padding: const EdgeInsets.fromLTRB(100, 0, 0, 0)),
-                          onPressed: () {
-                            setState(() {
-                              textController1.clear();
-                              result = 0.0;
-                            });
-                          },
-                          child: const Text(
-                            'Clear',
-                            style: TextStyle(color: Colors.black, fontSize: 16),
-                          ),
-                        )
+                        IconButton(
+                            style: IconButton.styleFrom(
+                                foregroundColor: Colors.black,
+                                padding:
+                                    const EdgeInsets.fromLTRB(100, 0, 0, 0)),
+                            onPressed: () {
+                              setState(() {
+                                textController1.clear();
+                                result = 0;
+                              });
+                            },
+                            icon: const Icon(Icons.delete)),
                       ],
                     ),
                   ),

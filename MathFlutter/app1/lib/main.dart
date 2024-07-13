@@ -29,19 +29,27 @@ class _MyWidgetState extends State<MyWidget> {
           child: Center(
             child: Container(
               padding: const EdgeInsets.all(12),
-              margin: const EdgeInsets.all(8),
+              margin: const EdgeInsets.all(2),
               color: Colors.brown,
               width: double.infinity,
               height: double.infinity,
               child: Column(
                 children: [
                   const Padding(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                    child: Text("You are  year(s) old !"),
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+                    child: Text("Welcom !",
+                        style: TextStyle(color: Colors.black, fontSize: 16)),
+                  ),
+                  const SizedBox(
+                    height: 250,
+                    width: 250,
+                    child: Image(
+                      image: AssetImage('images/images.png'),
+                    ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                    child: Text("Jacques Feruzi"),
+                    padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                    child: Text("Two math functions available"),
                   ),
                   Builder(
                     builder: (context) {
@@ -51,7 +59,7 @@ class _MyWidgetState extends State<MyWidget> {
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,
                               padding: const EdgeInsets.all(16),
-                              fixedSize: Size.fromWidth(250),
+                              fixedSize: const Size.fromWidth(250),
                               foregroundColor: Colors.white,
                             ),
                             onPressed: () {
@@ -70,7 +78,7 @@ class _MyWidgetState extends State<MyWidget> {
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           padding: const EdgeInsets.all(16),
-                          fixedSize: Size.fromWidth(250),
+                          fixedSize: const Size.fromWidth(250),
                           foregroundColor: Colors.white,
                         ),
                         onPressed: () {
