@@ -42,7 +42,7 @@ class _MySquareState extends State<MyPower> {
                 children: [
                   const Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 20),
-                    child: Text("Get the power of a number  !",
+                    child: Text("Get the power of a number !",
                         style: TextStyle(color: Colors.black, fontSize: 18)),
                   ),
                   Padding(
@@ -54,6 +54,7 @@ class _MySquareState extends State<MyPower> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
                           height: 40.0,

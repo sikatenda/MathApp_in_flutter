@@ -54,6 +54,7 @@ class _MySquareState extends State<MySquare> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
                           height: 40.0,

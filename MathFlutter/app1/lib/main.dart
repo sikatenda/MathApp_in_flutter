@@ -19,12 +19,13 @@ class _MyWidgetState extends State<MyWidget> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Center(
-            child: Text("FERUZI"),
-          ),
-          backgroundColor: const Color.fromARGB(255, 77, 225, 84),
-        ),
+        // appBar: AppBar(
+        //  title: const Center(
+        //   child: Text("pow() & sqrt()",
+        //       style: TextStyle(color: Colors.black, fontSize: 12)),
+        //  ),
+        // backgroundColor: const Color.fromARGB(255, 77, 225, 84),
+        // ),
         body: SafeArea(
           child: Center(
             child: Container(
@@ -36,8 +37,8 @@ class _MyWidgetState extends State<MyWidget> {
               child: Column(
                 children: [
                   const Padding(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-                    child: Text("Welcom !",
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    child: Text("pow() & sqrt() ",
                         style: TextStyle(color: Colors.black, fontSize: 16)),
                   ),
                   const SizedBox(
