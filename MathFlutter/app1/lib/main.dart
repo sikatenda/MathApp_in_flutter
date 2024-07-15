@@ -45,6 +45,7 @@ class _MyWidgetState extends State<MyWidget> {
                     height: 250,
                     width: 250,
                     child: Image(
+                      // image
                       image: AssetImage('images/images.png'),
                     ),
                   ),
@@ -57,6 +58,7 @@ class _MyWidgetState extends State<MyWidget> {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
+                            // moving to the power page calculation
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,
                               padding: const EdgeInsets.all(16),
@@ -76,6 +78,7 @@ class _MyWidgetState extends State<MyWidget> {
                   ),
                   Builder(builder: (context) {
                     return ElevatedButton(
+                        // move to the square root page
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           padding: const EdgeInsets.all(16),

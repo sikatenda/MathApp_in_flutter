@@ -45,6 +45,7 @@ class _MySquareState extends State<MySquare> {
                   ),
                   SizedBox(
                     child: Padding(
+                      //displaying the answer after calculating the square root of a number
                       padding: const EdgeInsets.fromLTRB(0, 40, 0, 40),
                       child: Text("$result",
                           style: const TextStyle(
@@ -60,6 +61,7 @@ class _MySquareState extends State<MySquare> {
                           height: 40.0,
                           width: 60.0,
                           child: TextField(
+                              // the text field that receives only the number
                               controller: textController1,
                               keyboardType: TextInputType.number,
                               inputFormatters: [
@@ -73,6 +75,7 @@ class _MySquareState extends State<MySquare> {
                               )),
                         ),
                         IconButton(
+                            //an icon that clear both text fields and the answer
                             style: IconButton.styleFrom(
                                 foregroundColor: Colors.black,
                                 padding:
@@ -89,6 +92,7 @@ class _MySquareState extends State<MySquare> {
                   ),
                   Builder(builder: (context) {
                     return ElevatedButton(
+                        //the button that process inputs and get the square root result
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           padding: const EdgeInsets.all(16),
@@ -107,6 +111,7 @@ class _MySquareState extends State<MySquare> {
                     padding: const EdgeInsets.all(8.0),
                     child: Builder(builder: (context) {
                       return ElevatedButton(
+                          //the button that return to the home page
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.black,
                             padding: const EdgeInsets.all(16),

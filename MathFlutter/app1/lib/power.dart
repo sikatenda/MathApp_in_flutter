@@ -46,6 +46,7 @@ class _MySquareState extends State<MyPower> {
                         style: TextStyle(color: Colors.black, fontSize: 18)),
                   ),
                   Padding(
+                    //displaying the answer after calculating the power of a number
                     padding: const EdgeInsets.fromLTRB(10, 20, 0, 40),
                     child: Text("$_result",
                         style:
@@ -60,6 +61,7 @@ class _MySquareState extends State<MyPower> {
                           height: 40.0,
                           width: 60.0,
                           child: TextField(
+                              // the text field that receives only the base number
                               controller: textController1,
                               keyboardType: TextInputType.number,
                               inputFormatters: [
@@ -77,6 +79,7 @@ class _MySquareState extends State<MyPower> {
                           height: 40.0,
                           width: 60.0,
                           child: TextField(
+                              // the text field that receives only the exponent number
                               controller: textController2,
                               keyboardType: TextInputType.number,
                               inputFormatters: [
@@ -90,6 +93,7 @@ class _MySquareState extends State<MyPower> {
                               )),
                         ),
                         IconButton(
+                            //an icon that clear both text fields and the answer
                             style: IconButton.styleFrom(
                                 foregroundColor: Colors.black,
                                 padding:
@@ -107,6 +111,7 @@ class _MySquareState extends State<MyPower> {
                   ),
                   Builder(builder: (context) {
                     return ElevatedButton(
+                        //the button that process inputs and get the power result
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.black,
                           padding: const EdgeInsets.all(16),
@@ -126,6 +131,7 @@ class _MySquareState extends State<MyPower> {
                     padding: const EdgeInsets.all(8.0),
                     child: Builder(builder: (context) {
                       return ElevatedButton(
+                          //the button that return to the home page
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.black,
                             padding: const EdgeInsets.all(16),
