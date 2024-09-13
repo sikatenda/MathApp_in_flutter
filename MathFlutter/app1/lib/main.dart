@@ -39,7 +39,10 @@ class _MyWidgetState extends State<MyWidget> {
                   const Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                     child: Text("pow() & sqrt() ",
-                        style: TextStyle(color: Colors.black, fontSize: 16)),
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                        )),
                   ),
                   const SizedBox(
                     height: 250,
