@@ -19,13 +19,6 @@ class _MyWidgetState extends State<MyWidget> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        // appBar: AppBar(
-        //  title: const Center(
-        //   child: Text("pow() & sqrt()",
-        //       style: TextStyle(color: Colors.black, fontSize: 12)),
-        //  ),
-        // backgroundColor: const Color.fromARGB(255, 77, 225, 84),
-        // ),
         body: SafeArea(
           child: Center(
             child: Container(
