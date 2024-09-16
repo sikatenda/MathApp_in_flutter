@@ -1,3 +1,4 @@
+//This project performs some math functions to such as square root and power
 import 'package:app1/squareRoot.dart';
 import 'package:flutter/material.dart';
 import 'package:app1/power.dart';
